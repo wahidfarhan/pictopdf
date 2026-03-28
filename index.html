@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionOCR | Physics MCQ Processor</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <!-- Load MathJax for AsciiMath rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+    <!-- Load html2pdf for PDF downloads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="section-title">CONFIG</div>
+        <div class="folder-group">
+            <label for="folder-input" class="btn btn-folder">📁 Select Folder</label>
+            <input type="file" id="folder-input" webkitdirectory directory multiple style="display: none;">
+            <input type="text" id="folder-path" class="input-light" placeholder="No folder selected" readonly>
+            <div id="file-count" class="text-muted"></div>
+        </div>
+        <button id="check-api-btn" class="btn btn-folder" style="margin-top: 15px; background-color: #475569;">🔑 Check API Limit</button>
+
+        <div class="section-title controls-title">CONTROLS</div>
+        <button id="start-btn" class="btn btn-start">▶ START PROCESS</button>
+        <button id="stop-btn" class="btn btn-stop" disabled>⏹ STOP</button>
+        
+        <div style="display: flex; gap: 8px; margin-top: 15px;">
+            <button id="download-txt-btn" class="btn btn-folder" style="flex: 1; margin-top: 0; padding: 10px 5px;" disabled>💾 TXT</button>
+            <button id="download-pdf-btn" class="btn btn-folder" style="flex: 1; margin-top: 0; background-color: #EF4444; padding: 10px 5px;" disabled>📄 PDF</button>
+        </div>
+
+        <div class="section-title preview-title">IMAGE PREVIEW</div>
+        <div class="preview-container">
+            <img id="preview-img" src="" alt="Preview">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="status-frame">
+            <span id="status-label">System Ready</span>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+            <div class="section-label" style="margin-bottom: 0;">EXTRACTED CONTENT</div>
+            <div class="toggle-group">
+                <button id="view-raw-btn" class="btn-toggle active">💻 Raw Formatting</button>
+                <button id="view-render-btn" class="btn-toggle">📝 Rendered Math</button>
+            </div>
+        </div>
+        
+        <div class="text-display" id="text-display"></div>
+
+        <div class="section-label log-label">SYSTEM LOGS</div>
+        <div class="status-log" id="status-log"></div>
+    </div>
+
+    <script src="app.js?v=1.2"></script>
+</body>
+</html>
