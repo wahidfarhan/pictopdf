@@ -1,5 +1,9 @@
 # 🚀 PicToPdf | Physics MCQ Processor
-
+<div align="center">
+  <img src="screenshot.png" alt="VisionOCR Interface" width="800"/>
+  <br>
+  <i>A fully automated, purely client-side Math OCR & PDF rendering machine.</i>
+</div>
 PictoPdf is a powerful, fully client-side web application designed to automatically convert folders of Physics Multiple Choice Question (MCQ) images into properly formatted AsciiMath text and beautifully rendered printable PDFs. 
 
 Built entirely with HTML, CSS, and Vanilla JavaScript, it requires **zero backend servers** and runs directly in your browser. It utilizes the powerful **Google Gemini API** (`gemini-3-flash-preview`) to accurately detect mathematical notations, equations, and diagrams from images.
